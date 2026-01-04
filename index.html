@@ -7,9 +7,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Card Showcase</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Hall of Fame (1).png">
 </head>
 
 <body>
+       <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const coords = { x: 0, y: 0 };
+          const circles = document.querySelectorAll(".circle");
+
+          circles.forEach(function (circle) {
+            circle.x = 0;
+            circle.y = 0;
+          });
+
+          window.addEventListener("mousemove", function (e) {
+            coords.x = e.pageX;
+            coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+          });
+
+          function animateCircles() {
+            let x = coords.x;
+            let y = coords.y; 
+            circles.forEach(function (circle, index) {
+              circle.style.left = `${x - 12}px`;
+              circle.style.top = `${y - 12}px`;
+              circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+              const nextCircle = circles[index + 1] || circles[0];
+              circle.x = x;
+              circle.y = y;
+                            x += (nextCircle.x - x) * 0.3;
+              y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+          }
+
+          animateCircles();
+        });
+
+      </script>
+
 
     <!-- NAVBAR START -->
     <nav class="navbar">
@@ -268,6 +338,30 @@
             <span class="role">Backend Developer</span>
             <p>"I am excited to make my first open-source contribution and learned how to make a Pull Request today!"</p>
             <a href="https://github.com/ashishagrawalcode" class="card-btn" target="_blank">View My GitHub Profile!</a>
+        </div>
+
+        <div class="card">
+            <img src="images/Pallavi.jpg" alt="Ashish's Photo" class="card-img">
+            <h2>Pallavi Verulkar</h2>
+            <span class="role">frontend developer</span>
+            <p>"I am excited to make my first open-source contribution!"</p>
+            <a href="https://github.com/Pallavi960" class="card-btn" target="_blank">View My GitHub Profile!</a>
+        </div>
+
+        <div class="card">
+            <img src="images/jayesh.jpg" alt="Jayesh thar" class="card-img">
+            <h2>Jayesh Thar</h2>
+            <span class="role">Contributor</span>
+            <p>"Hy there! Let's connect and build..."</p>
+            <a href="https://github.com/jayesh-thar" class="card-btn" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card">
+            <img src="images/rakhi-dixit.png" alt=" Rakhi's Photo" class="card-img">
+            <h2>Rakhi Dixit</h2>
+            <span class="role">Contributor</span>
+            <p>"I learned how to make a Pull Request today!"</p>
+            <a href="https://github.com/Rakhi-Dixit03" class="card-btn" target="_blank">GitHub</a>
         </div>
       
       
